@@ -179,3 +179,47 @@ c5  沈阳  100.1  101.4  101.6
 1  False  False   True  False
 2  False  False  False  False
 '''
+
+
+# .sort_index() 方法再指定轴上根据索引进行排序，默认是升序
+# b = pd.DataFrame(np.arange(20).reshape(4, 5), index=['c', 'a', 'd', 'b'])
+# c = b.sort_index(ascending=False)  # 倒序排序
+# print(c)
+'''
+    0   1   2   3   4
+d  10  11  12  13  14
+c   0   1   2   3   4
+b  15  16  17  18  19
+a   5   6   7   8   9
+'''
+# c = b.sort_index(axis=1, ascending=False)  # 对1轴进行降序排序
+# print(c)
+'''
+    4   3   2   1   0
+c   4   3   2   1   0
+a   9   8   7   6   5
+d  14  13  12  11  10
+b  19  18  17  16  15
+'''
+
+
+# .sort_values() 在指定轴上根据数据进行排序，默认升序
+# b = pd.DataFrame(np.arange(20).reshape(4, 5), index=['c', 'a', 'd', 'b'])  # 对第二列的数据进行了降序的排序
+# c = b.sort_values(2, ascending=False)
+# print(c)
+'''
+    0   1   2   3   4
+b  15  16  17  18  19
+d  10  11  12  13  14
+a   5   6   7   8   9
+c   0   1   2   3   4
+'''
+# c = b.sort_values('a', ascending=False, axis=1)  # 对“a”行进行降序的排序
+# print(c)
+'''
+    4   3   2   1   0
+c   4   3   2   1   0
+a   9   8   7   6   5
+d  14  13  12  11  10
+b  19  18  17  16  15
+'''
